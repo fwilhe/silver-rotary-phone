@@ -14,4 +14,4 @@ jobs:
         touch foo-a foo-b foo-c
     - run: find . -name 'foo-*'
       id: myfind
-    - run: echo ${{ steps.myfind.outputs }}
+    - run: echo ${{ toJson( steps.myfind.outputs ) }}
