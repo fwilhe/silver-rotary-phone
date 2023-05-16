@@ -16,4 +16,4 @@ jobs:
         find . -name 'foo-*'
         echo "foo=`find . -name 'foo-*' | tr '\n' ' '`" >> "$GITHUB_OUTPUT"
       id: myfind
-    - run: echo ${{ toJson( steps.myfind.outputs ) }}
+    - run: echo ${{ toJson( steps.myfind.outputs.foo ) }}
